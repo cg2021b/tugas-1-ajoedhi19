@@ -1,7 +1,8 @@
 # tugas-1
 
-Nama: Muhammad Akmal Joedhiawan
-NRP: 05111940000125
+*Nama: Muhammad Akmal Joedhiawan
+
+*NRP: 05111940000125
 
 ## Tugas 
 * Cari benda di sekitar Anda yang berawalan huruf B, G, atau L.
