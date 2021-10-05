@@ -1,4 +1,4 @@
-var vertices_kiri = [
+var vertices_left = [
   // kanan atas
   -0.9, -0.2, 1.0, 1.0, 1.0, 
   -0.1, -0.2, 1.0, 1.0, 1.0, 
@@ -27,7 +27,7 @@ var vertices_kiri = [
   -0.9, -0.2, 0.9317, 0.9058, 0.9058,
 ];
 
-var vertices_kanan = [
+var vertices_right = [
   // depan atas
   0.8, -0.5, 1.0, 1.0, 1.0,
   0.2, -0.5, 1.0, 1.0, 1.0,
