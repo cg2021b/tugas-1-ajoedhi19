@@ -5,7 +5,7 @@ function main() {
   var canvas = document.getElementById("myCanvas");
   var gl = canvas.getContext("webgl");
 
-  var vertices = [...vertices_kiri, ...vertices_kanan];
+  var vertices = [...vertices_left, ...vertices_right];
 
   var buffer = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
@@ -67,10 +67,10 @@ function main() {
     gl.clear(gl.COLOR_BUFFER_BIT);
 
     gl.uniformMatrix4fv(uTranslate, false, kiri);
-    gl.drawArrays(gl.TRIANGLES, 0, vertices_kiri.length / 5);
+    gl.drawArrays(gl.TRIANGLES, 0, vertices_left.length / 5);
 
     gl.uniformMatrix4fv(uTranslate, false, kanan);
-    gl.drawArrays(gl.TRIANGLES, vertices_kiri.length / 5, vertices_kanan.length / 5);
+    gl.drawArrays(gl.TRIANGLES, vertices_left.length / 5, vertices_right.length / 5);
 
     requestAnimationFrame(render);
   }
