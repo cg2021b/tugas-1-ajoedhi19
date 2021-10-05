@@ -59,17 +59,17 @@ function main() {
     if (dy >= 0.7 || dy <= -0.46) speed = -speed;
     dy += speed;
 
-    const kiri = [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0, 0.0, 0.0, 1.0];
+    const left = [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0, 0.0, 0.0, 1.0];
 
-    const kanan = [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, dy, 0.0, 1.0];
+    const right = [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, dy, 0.0, 1.0];
 
     gl.clearColor(0.8, 0.8, 0.8, 1.0);
     gl.clear(gl.COLOR_BUFFER_BIT);
 
-    gl.uniformMatrix4fv(uTranslate, false, kiri);
+    gl.uniformMatrix4fv(uTranslate, false, left);
     gl.drawArrays(gl.TRIANGLES, 0, vertices_left.length / 5);
 
-    gl.uniformMatrix4fv(uTranslate, false, kanan);
+    gl.uniformMatrix4fv(uTranslate, false, right);
     gl.drawArrays(gl.TRIANGLES, vertices_left.length / 5, vertices_right.length / 5);
 
     requestAnimationFrame(render);
