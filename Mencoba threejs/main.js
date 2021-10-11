@@ -14,7 +14,7 @@ let createCircle = function () {
   let material = new THREE.MeshBasicMaterial({ color: 0xffffff });
   circle = new THREE.Mesh(geometry, material);
   scene.add(circle);
-  circle.position.set(0, 0, 0);
+  circle.position.set(-2, 2, 0);
 };
 
 let createTorusKnot = function () {
@@ -22,7 +22,7 @@ let createTorusKnot = function () {
   let material = new THREE.MeshBasicMaterial({ color: 0xffff00, wireframe: true });
   torusKnot = new THREE.Mesh(geometry, material);
   scene.add(torusKnot);
-  torusKnot.position.set(2, 0, 0);
+  torusKnot.position.set(0, 2, 0);
 };
 
 let createCube = () => {
@@ -30,7 +30,7 @@ let createCube = () => {
   let material = new THREE.MeshBasicMaterial({ wireframe: true, color: 0x00a1cb });
   cube = new THREE.Mesh(geometry, material);
   scene.add(cube);
-  cube.position.set(0, -2, 0);
+  cube.position.set(2, 2, 0);
 };
 
 let createCone = () => {
@@ -38,7 +38,7 @@ let createCone = () => {
   let material = new THREE.MeshPhongMaterial({ color: 0xaa4400, shininess: 150 });
   cone = new THREE.Mesh(geometry, material);
   scene.add(cone);
-  cone.position.set(0, 2, 0);
+  cone.position.set(-2, 0, 0);
 };
 
 let createCylinder = () => {
@@ -46,7 +46,7 @@ let createCylinder = () => {
   let material = new THREE.MeshLambertMaterial({ color: 0x448800, emissive: 0x0 });
   cylinder = new THREE.Mesh(geometry, material);
   scene.add(cylinder);
-  cylinder.position.set(-2, -2, 0);
+  cylinder.position.set(0, 0, 0);
 };
 
 let createTetrahedron = function () {
@@ -54,7 +54,7 @@ let createTetrahedron = function () {
   let material = new THREE.MeshPhysicalMaterial({ color: 0x9b1818 });
   tetrahedron = new THREE.Mesh(geometry, material);
   scene.add(tetrahedron);
-  tetrahedron.position.set(-2, 0, 0);
+  tetrahedron.position.set(2, 0, 0);
 };
 
 let createTorus = () => {
@@ -62,7 +62,7 @@ let createTorus = () => {
   let material = new THREE.MeshPhongMaterial({ color: 0x880044, shininess: 150 });
   torus = new THREE.Mesh(geometry, material);
   scene.add(torus);
-  torus.position.set(2, -2, 0);
+  torus.position.set(-2, -2, 0);
 };
 
 let createSphere = () => {
@@ -70,7 +70,7 @@ let createSphere = () => {
   let material = new THREE.MeshDistanceMaterial({ color: 0x990099 });
   sphere = new THREE.Mesh(geometry, material);
   scene.add(sphere);
-  sphere.position.set(2, 2, 0);
+  sphere.position.set(0, -2, 0);
 };
 
 let createOctahedron = () => {
@@ -78,7 +78,7 @@ let createOctahedron = () => {
   let material = new THREE.MeshPhongMaterial({ color: 0x0077ff, shininess: 150 });
   octahedron = new THREE.Mesh(geometry, material);
   scene.add(octahedron);
-  octahedron.position.set(-2, 2, 0);
+  octahedron.position.set(2, -2, 0);
 };
 
 function main() {
@@ -121,15 +121,15 @@ function main() {
   });
 
   // 3. create an locate the object on the scene
+  createCircle();
+  createTorusKnot();
   createCube();
   createCone();
   createCylinder();
+  createTetrahedron();
   createTorus();
   createSphere();
   createOctahedron();
-  createCircle();
-  createTorusKnot();
-  createTetrahedron();
 
   // 4. create the renderer
   renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -147,9 +147,6 @@ function main() {
     torusKnot.rotation.x += 0.01;
     torusKnot.rotation.y -= 0.01;
 
-    tetrahedron.rotation.x -= 0.01;
-    tetrahedron.rotation.y -= 0.01;
-
     cube.rotation.x += 0.01;
     cube.rotation.y += 0.01;
 
@@ -158,6 +155,9 @@ function main() {
 
     cylinder.rotation.x += 0.01;
     cylinder.rotation.y -= 0.01;
+
+    tetrahedron.rotation.x -= 0.01;
+    tetrahedron.rotation.y -= 0.01;
 
     torus.rotation.x += 0.01;
     torus.rotation.y += 0.01;
@@ -173,3 +173,4 @@ function main() {
 
   mainLoop();
 }
+
